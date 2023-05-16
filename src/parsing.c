@@ -6,7 +6,7 @@
 /*   By: araymond <araymond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 14:05:18 by araymond          #+#    #+#             */
-/*   Updated: 2023/05/04 11:43:15 by araymond         ###   ########.fr       */
+/*   Updated: 2023/05/09 13:33:50 by araymond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	check_args(t_stack **stack, char *str, char **split)
 	long long	nb;
 	t_stack		*temp;
 
-	if (ft_strlen(str) > 11)
+	if (ft_strlen(str) > 11 || ft_strlen(str) == 0)
 		error_message(stack, NULL, split);
 	temp = *stack;
 	i = 0;
@@ -115,7 +115,7 @@ void	parse_args(int argc, char **argv, t_stack **stack)
 			error_message(stack, NULL, NULL);
 		(*stack)->size++;
 		if (!(argv[i + 1] == NULL))
-			parse_loop(stack, &temp, prev);
+			parse_loop(stack, &temp, prev, NULL);
 	}
 	check_eq(stack, NULL);
 	set_loop(stack, argc - 1);

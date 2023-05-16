@@ -6,7 +6,7 @@
 /*   By: araymond <araymond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:27:45 by araymond          #+#    #+#             */
-/*   Updated: 2023/05/04 11:44:02 by araymond         ###   ########.fr       */
+/*   Updated: 2023/05/16 09:38:03 by araymond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ void	index_loop(t_stack	**temp, int *low)
 	*temp = (*temp)->next;
 }
 
-void	parse_loop(t_stack **stack, t_stack **temp, t_stack *prev)
+void	parse_loop(t_stack **stack, t_stack **temp, t_stack *prev, char **split)
 {
-	addback_stack(stack);
+	if (addback_stack(stack) == 0)
+		error_message(stack, NULL, split);
 	prev = *temp;
 	*temp = (*temp)->next;
 	(*temp)->prev = prev;
@@ -48,7 +49,7 @@ void	parse_exception(char **argv, t_stack **stack)
 			error_message(stack, NULL, split);
 		(*stack)->size++;
 		if (!(split[i + 1] == NULL))
-			parse_loop(stack, &temp, prev);
+			parse_loop(stack, &temp, prev, split);
 		i++;
 	}
 	check_eq(stack, split);

@@ -6,7 +6,7 @@
 /*   By: araymond <araymond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 10:18:35 by araymond          #+#    #+#             */
-/*   Updated: 2023/05/04 13:19:19 by araymond         ###   ########.fr       */
+/*   Updated: 2023/05/16 09:38:35 by araymond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	check_eq(t_stack **stack, char **split);
 void	set_index(t_stack **stack, int s_count);
 int		check_args(t_stack **stack, char *str, char **split);
 void	set_loop(t_stack **stack, int s_count);
-void	parse_loop(t_stack **stack, t_stack **temp, t_stack *prev);
+void	parse_loop(t_stack **stack, t_stack **temp, t_stack *prev, \
+		char **split);
 
 #endif

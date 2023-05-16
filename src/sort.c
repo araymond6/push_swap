@@ -6,14 +6,14 @@
 /*   By: araymond <araymond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 13:00:22 by araymond          #+#    #+#             */
-/*   Updated: 2023/05/04 11:12:27 by araymond         ###   ########.fr       */
+/*   Updated: 2023/05/09 12:17:49 by araymond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ops.h"
 #include "utils.h"
 
-void	push_back(t_stack **stack_a, t_stack **stack_b)
+static void	push_back(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*temp;
 
